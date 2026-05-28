@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result - SkillSync AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">SkillSync AI</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/upload">Analyze Another</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row">
+            <!-- Score Section -->
+            <div class="col-lg-4 mb-4">
+                <div class="card result-card text-center p-4 h-100">
+                    <h3 class="mb-4">Employability Score</h3>
+                    <div class="score-container mb-3">
+                        <div class="score-ring" data-score="{{ score['score'] }}">
+                            <span class="score-number">0</span><span class="score-percent">%</span>
+                        </div>
+                    </div>
+                    <h4 class="text-accent">{{ score['label'] }}</h4>
+                    <p class="text-muted">Target Role: {{ role }}</p>
+                    <hr class="border-secondary">
+                    <div class="d-grid gap-2">
+                        <a href="/download-report/{{ report_filename }}" class="btn btn-outline-light">Download Full Report</a>
+                        <a href="/upload" class="btn btn-primary">Analyze Another</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="col-lg-8">
+                <div class="card result-card p-4 mb-4">
+                    <h3>Detected Skills</h3>
+                    <div class="d-flex flex-wrap gap-2 mt-3" id="detectedSkills">
+                        {% for skill in analysis['matched'] %}
+                        <span class="badge badge-skill badge-matched">{{ skill }}</span>
+                        {% endfor %}
+                        {% if not analysis['matched'] %}
+                        <p class="text-muted">No matching skills detected from your resume.</p>
+                        {% endif %}
+                    </div>
+                    
+                    <h3 class="mt-5">Missing Skills</h3>
+                    <div class="d-flex flex-wrap gap-2 mt-3" id="missingSkills">
+                        {% for skill in analysis['missing'] %}
+                        <span class="badge badge-skill badge-missing">{{ skill }}</span>
+                        {% endfor %}
+                        {% if not analysis['missing'] %}
+                        <p class="text-success">Perfect match! You have all the required skills for this role.</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Recommendations Section -->
+                <div class="card result-card p-4">
+                    <h3 class="mb-4">Learning Roadmap</h3>
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Skill</th>
+                                    <th>Strategic Tip</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for rec in recommendations %}
+                                <tr>
+                                    <td class="fw-bold">{{ rec['skill'] }}</td>
+                                    <td>{{ rec['tip'] }}</td>
+                                    <td><a href="{{ rec['url'] }}" target="_blank" class="btn btn-sm btn-accent">Learn Now</a></td>
+                                </tr>
+                                {% endfor %}
+                                {% if not recommendations %}
+                                <tr>
+                                    <td colspan="3" class="text-center">Great job! No missing skills to recommend.</td>
+                                </tr>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

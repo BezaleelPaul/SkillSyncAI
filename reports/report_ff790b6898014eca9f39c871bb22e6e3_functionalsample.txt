@@ -1,0 +1,31 @@
+SKILLSYNC AI - RESUME ANALYSIS REPORT
+====================================
+
+Target Role: Data Analyst
+Employability Score: 0% (Beginner)
+
+DETECTED SKILLS:
+None detected
+
+MISSING SKILLS:
+Python, Pandas, NumPy, SQL, Excel, Power BI, Tableau, Statistics, Matplotlib
+
+RECOMMENDATIONS:
+- Excel: Complete a project or certification in Excel to strengthen your profile.
+  Resource: https://www.microsoft.com/en-us/microsoft-365/excel
+- Matplotlib: Complete a project or certification in Matplotlib to strengthen your profile.
+  Resource: https://matplotlib.org/stable/tutorials/index.html
+- NumPy: Complete a project or certification in NumPy to strengthen your profile.
+  Resource: https://numpy.org/doc/stable/user/absolute_beginners.html
+- Pandas: Complete a project or certification in Pandas to strengthen your profile.
+  Resource: https://pandas.pydata.org/docs/getting_started/index.html
+- Power BI: Complete a project or certification in Power BI to strengthen your profile.
+  Resource: https://learn.microsoft.com/en-us/power-bi/
+- Python: Solve 50+ LeetCode problems in Python to master syntax and logic.
+  Resource: https://www.learnpython.org
+- SQL: Complete a project or certification in SQL to strengthen your profile.
+  Resource: https://www.w3schools.com/sql/
+- Statistics: Complete a project or certification in Statistics to strengthen your profile.
+  Resource: https://www.khanacademy.org/math/statistics-probability
+- Tableau: Complete a project or certification in Tableau to strengthen your profile.
+  Resource: https://www.tableau.com/learn/training

@@ -1,0 +1,23 @@
+SKILLSYNC AI - RESUME ANALYSIS REPORT
+====================================
+
+Target Role: Data Scientist
+Employability Score: 50% (Beginner)
+
+DETECTED SKILLS:
+Machine Learning, Python, R, SQL, Statistics
+
+MISSING SKILLS:
+Pandas, NumPy, Matplotlib, TensorFlow, Jupyter
+
+RECOMMENDATIONS:
+- Jupyter: Complete a project or certification in Jupyter to strengthen your profile.
+  Resource: https://jupyter.org/documentation
+- Matplotlib: Complete a project or certification in Matplotlib to strengthen your profile.
+  Resource: https://matplotlib.org/stable/tutorials/index.html
+- NumPy: Complete a project or certification in NumPy to strengthen your profile.
+  Resource: https://numpy.org/doc/stable/user/absolute_beginners.html
+- Pandas: Complete a project or certification in Pandas to strengthen your profile.
+  Resource: https://pandas.pydata.org/docs/getting_started/index.html
+- TensorFlow: Complete a project or certification in TensorFlow to strengthen your profile.
+  Resource: https://www.tensorflow.org/tutorials
